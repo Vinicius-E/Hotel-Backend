@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: hotel-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/senior_challenge_db
+    #CHANGE FOR CREDENTIALS CREATED IN POSTGRESQL
+    username: postgres
+    password: Vini13lagoa$
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    defer-datasource-initialization: true
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: America/Sao_Paulo
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+  info:
+    title: Hotel Backend API
+    description: API para gerenciamento de hóspedes e check-ins de hotel
+    version: 1.0.0
+    contact:
+      name: Hotel Backend Team
+      email: backend@hotel.com
+
+logging:
+  level:
+    com.hotel.backend: DEBUG                     # keep your app logs at DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: OFF                       # turn off SQL query logging
+    org.hibernate.type.descriptor.sql.BasicBinder: OFF   # turn off bind param logging
+    org.springdoc: DEBUG
