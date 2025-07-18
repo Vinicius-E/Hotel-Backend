@@ -46,10 +46,10 @@ springdoc:
   info:
     title: Hotel Backend API
     description: API para gerenciamento de hóspedes e check-ins de hotel
-    version: 1.0.0
+    version: 2.0.0
     contact:
-      name: Hotel Backend Team
-      email: backend@hotel.com
+      name: Vinicius Eduardo Da Silva
+      email: viniciuseduardo0702@hotmail.com
 
 logging:
   level:
